@@ -1,0 +1,29 @@
+/obj/
+/out/
+
+# Ignore compiled object files
+*.o
+*.obj
+
+# Ignore compiled executable files
+*.exe
+*.out
+*.app
+
+# Ignore generated dependency files
+*.d
+
+# Ignore IDE/editor files
+.vscode/
+*.code-workspace
+.idea/
+*.iml
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
