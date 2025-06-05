@@ -27,3 +27,6 @@ Thumbs.db
 *.log
 *.tmp
 
+# Ignore test files
+*test.cpp
+
