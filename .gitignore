@@ -30,3 +30,5 @@ Thumbs.db
 # Ignore test files
 *test.cpp
 
+# Ignore old code
+archive/
