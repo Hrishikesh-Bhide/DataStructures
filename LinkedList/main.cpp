@@ -1,16 +1,16 @@
-#include "ll.cpp"
+#include "LinkedList.cpp"
 
 int main() {
     LinkedList* l = new LinkedList();
-    l->insertAtFront(10);
+    l->insert_front(10);
     l->display();
-    l->insertAtFront(20);
-    l->insertAtFront(30);
+    l->insert_front(20);
+    l->insert_front(30);
     l->display();
-    l->insertAtBack(40);
-    l->insertAtBack(130);
+    l->insert_back(40);
+    l->insert_back(130);
     l->display();
-    l->deleteAtBack();
-    l->deleteAtFront();
+    l->delete_back();
+    l->delete_front();
     l->display();
 }
