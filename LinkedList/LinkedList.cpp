@@ -92,6 +92,18 @@ public:
         std::cout << std::endl;
     }
 
+    void insertManyAtBack(int x[], int n){
+        for (int i = 0; i < n; i++) {
+            insert_back(x[i]);
+        }
+    }
+
+    void insertManyAtFront(int x[], int n){
+        for (int i = 0; i < n; i++) {
+            insert_front(x[i]);
+        }
+    }
+
     ~LinkedList() {
         while (head != nullptr) {
             Node* temp = head;

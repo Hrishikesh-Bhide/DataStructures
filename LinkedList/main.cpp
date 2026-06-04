@@ -2,15 +2,17 @@
 
 int main() {
     LinkedList* l = new LinkedList();
-    l->insert_front(10);
+    l->insert_back(20);
+    l->insert_back(30);
+    int x[] = {1,2,3,4};
+    l->insertManyAtBack(x, 4);
     l->display();
-    l->insert_front(20);
-    l->insert_front(30);
+    l->insertManyAtFront(x, 4);
     l->display();
-    l->insert_back(40);
-    l->insert_back(130);
-    l->display();
-    l->delete_back();
-    l->delete_front();
-    l->display();
+
+    LinkedList* stack = new LinkedList();
+    stack->insert_back(20);
+    stack->insert_back(30);
+    stack->insert_front(10);
+
 }
