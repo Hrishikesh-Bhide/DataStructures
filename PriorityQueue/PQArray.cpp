@@ -17,7 +17,7 @@ class PQArray {
         ~PQArray() {
             delete[] arr;
         }
-        void enqueue(int val) {
+        void enqueue(int val) { // O(1)
             if (size == capacity) {
                 std::cout << "Queue is Full - Could not insert! " << val << std::endl;
             } else {
@@ -26,7 +26,7 @@ class PQArray {
                 size = size + 1;
             }
         }
-        void dequeue(){
+        void dequeue(){ // O(n)
             if (size == 0) {
                 std::cout << "Queue is Empty" << std::endl;
             } else {

@@ -1,21 +1,28 @@
-#include "PQArray.cpp"
+#include "Heap.cpp"
 
 int main() {
-    PQArray* q = new PQArray(6);
-    q->enqueue(100);
-    q->enqueue(-200);
-    q->enqueue(30);
-    q->enqueue(40);
-    q->dequeue();
-    q->enqueue(50);
-    q->enqueue(6);
-    q->dequeue();
-    q->dequeue();
-    q->dequeue();
-    q->dequeue();
-    q->dequeue();
-    q->dequeue();
-    q->dequeue();
-    q->dequeue();
+    Heap* h = new Heap(10);
+    h->display();
+    h->enqueue(10);
+    h->display();
+    h->enqueue(8);
+    h->display();
+    h->enqueue(11);
+    h->display();
+    h->enqueue(3);
+    h->display();
+    h->enqueue(12);
+    h->display();
+    h->enqueue(100);
+    h->display();
+    h->enqueue(2);
+    h->display();
+    h->enqueue(1);
+    h->display();
+    h->dequeue();
+    h->display();
+    h->dequeue();
+    h->display();
+ 
     return 0;
 }
