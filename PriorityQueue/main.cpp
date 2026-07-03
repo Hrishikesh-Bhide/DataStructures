@@ -3,26 +3,15 @@
 int main() {
     Heap* h = new Heap(10);
     h->display();
-    h->enqueue(10);
-    h->display();
-    h->enqueue(8);
-    h->display();
-    h->enqueue(11);
-    h->display();
-    h->enqueue(3);
-    h->display();
-    h->enqueue(12);
-    h->display();
-    h->enqueue(100);
-    h->display();
-    h->enqueue(2);
-    h->display();
-    h->enqueue(1);
-    h->display();
-    h->dequeue();
-    h->display();
-    h->dequeue();
-    h->display();
- 
+    
+    int* a = new int[5]{1, 10, 2, 12, 15};
+    Heap* h2 = new Heap(a, 5);
+    h2->display();
+    h2->insert(100);
+    h2->insert(80);
+    h2->extract();
+    h2->display();
+    h2->heapSort();
+    //h2->display();
     return 0;
 }
