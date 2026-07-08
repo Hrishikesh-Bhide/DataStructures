@@ -10,7 +10,7 @@ int main() {
     std::cout << "Square(" << x << ") = " << mathutil::square(x) << "\n";
     std::cout << "Cube(" << x << ")   = " << mathutil::cube(x) << "\n";
 
-    std::cout << "Min(" << a << ", " << b << ") = " << arrayutil::min(a, b) << "\n";
+    std::cout << "Min(" << a << ", " << b << ") = " << test::min(a, b) << "\n";
     std::cout << "Max(" << a << ", " << b << ") = " << arrayutil::max(a, b) << "\n";
 
     return 0;

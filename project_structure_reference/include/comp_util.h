@@ -5,4 +5,8 @@ namespace arrayutil {
     int min(int a, int b);
 }
 
+namespace test {
+    int min(int a, int b);
+}
+
 #endif
