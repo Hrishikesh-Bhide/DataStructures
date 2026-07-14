@@ -15,13 +15,13 @@ class BinarySearchTree {
 private:
     Node* root;
 
-    Node* insertRec(Node* cur, int key) {
+    Node* insert(Node* cur, int key) {
         if (cur == nullptr) return new Node(key);
 
         if (key < cur->key)
-            cur->left = insertRec(cur->left, key);
+            cur->left = insert(cur->left, key);
         else if (key > cur->key)
-            cur->right = insertRec(cur->right, key);
+            cur->right = insert(cur->right, key);
 
         return cur;
     }
@@ -103,7 +103,7 @@ public:
     BinarySearchTree() : root(nullptr) {}
 
     void insert(int key) {
-        root = insertRec(root, key);
+        root = insert(root, key);
     }
 
     void remove(int key) {
