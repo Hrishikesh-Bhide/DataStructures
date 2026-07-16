@@ -3,9 +3,11 @@
 
 struct Node {
     int key;
+    int f;
     Node *left, *right;
 
     Node(int val) {
+        f = 1;
         key = val;
         left = right = nullptr;
     }
@@ -22,6 +24,9 @@ private:
             cur->left = insert(cur->left, key);
         else if (key > cur->key)
             cur->right = insert(cur->right, key);
+        else {
+            cur->f += 1;
+        }
 
         return cur;
     }
@@ -40,6 +45,10 @@ private:
         } else if (key > cur->key) {
             cur->right = deleteRec(cur->right, key);
         } else {
+            if (cur->f > 1) {
+                cur->f -= 1;
+                return cur;
+            }
             if (cur->left == nullptr) {
                 Node* temp = cur->right;
                 delete cur;
@@ -52,6 +61,8 @@ private:
             // Case 3: Two children
             Node* succ = findMin(cur->right);
             cur->key = succ->key;
+            cur->f = succ->f;
+            succ->f = 1;
             cur->right = deleteRec(cur->right, succ->key);
         }
         return cur;
