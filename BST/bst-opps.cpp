@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <queue>
 
 struct Node {
     int key;
@@ -109,6 +110,59 @@ private:
         delete curr;
     }
 
+    void inOrder(Node* curr) {
+        if (curr != nullptr) {
+            inOrder(curr->left);
+            for (int i = 1; i<= curr->f; i++) {
+                std::cout << curr->key << " ";
+            }
+            inOrder(curr->right);
+        }
+    }
+
+    void postOrder(Node* curr) {
+        if (curr != nullptr) {
+            postOrder(curr->left);
+            postOrder(curr->right);
+            for (int i = 1; i<= curr->f; i++) {
+                std::cout << curr->key << " ";
+            }
+        }
+    }
+
+    //13 43 42 41 68 70 90 76 58 58
+
+    void preOrder(Node* curr) {
+        if (curr != nullptr) {
+            for (int i = 1; i<= curr->f; i++) {
+                std::cout << curr->key << " ";
+            }
+            preOrder(curr->left);
+            preOrder(curr->right);
+        }
+    }
+
+    void levelOrder(Node* curr) {
+        if (curr == nullptr) {
+            return;
+        } 
+        std::queue<Node*> q;
+        q.push(curr);
+
+        while (!q.empty()){
+            Node* temp = q.front();
+            if (temp->left != nullptr) {
+                q.push(temp->left);
+            }
+            if (temp->right != nullptr) {
+                q.push(temp->right);
+            }
+            q.pop();
+            for (int i = 1; i<= temp->f; i++) {
+                std::cout << temp->key << " ";
+            }
+        }
+    }
 
 public:
     BinarySearchTree() : root(nullptr) {}
@@ -131,6 +185,26 @@ public:
 
     int height() {
         return height(root)-1;
+    }
+
+    void inOrder() {
+        inOrder(root);
+        std::cout << std::endl;
+    }
+
+    void postOrder() {
+        postOrder(root);
+        std::cout << std::endl;
+    }
+
+    void preOrder() {
+        preOrder(root);
+        std::cout << std::endl;
+    }
+
+    void levelOrder() {
+        levelOrder(root);
+        std::cout << std::endl;
     }
 
     ~BinarySearchTree() {
