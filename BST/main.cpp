@@ -1,5 +1,7 @@
 #include "bst-opps.cpp"
 
+//Added comments in main.cpp
+
 int main() {
     BinarySearchTree* b = new BinarySearchTree();
     b->insert(10);

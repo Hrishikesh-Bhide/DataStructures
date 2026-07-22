@@ -2,6 +2,8 @@
 #include <algorithm>
 #include <queue>
 
+//Added the frequency parameter for every unique value in the tree
+
 struct Node {
     int key;
     int f;
